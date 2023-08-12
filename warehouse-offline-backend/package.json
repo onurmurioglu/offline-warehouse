@@ -1,0 +1,11 @@
+{
+  "name": "warehouse_service_offline",
+  "version": "1.0.0",
+  "description": "warehouse offline api",
+  "main": "index.js",
+  "scripts": {
+    "start:server": "json-server --watch db.json"
+  },
+  "author": "",
+  "license": "ISC"
+}
