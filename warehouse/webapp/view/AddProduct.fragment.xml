@@ -1,0 +1,54 @@
+<core:FragmentDefinition
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core" >
+  <Dialog id="addStockDialog" title="Malzeme Ekle">
+        <VBox>
+
+         <HBox>
+                <Label text="Ürün URL: " class="sapTLabel"/>
+
+            <Input id="uploadedImage" value="{newMaterial>/image}"/>
+
+             
+            </HBox>
+            <HBox>
+                <Label text="Ürün Adı: " class="sapTLabel"/>
+                <Input id="productNameInput" value="{newMaterial>/title}" />
+            </HBox>
+            
+            <HBox>
+                <Label text="Ürün Kodu: " class="sapTLabel"/>
+                <Input id="productCodeInput" value="{newMaterial>/productCode}" />
+            </HBox>
+            
+            <HBox>
+                <Label text="Stok Adedi: " class="sapTLabel"/>
+                <Input id="stockQuantityInput" value="{newMaterial>/stock}"/>
+            </HBox>
+            
+            <HBox>
+                <Label text="Ürün Açıklaması: " class="sapTLabel"/>
+                <TextArea id="productDescriptionInput" rows="5" width="100%" value="{newMaterial>/description}"/>
+            </HBox>
+
+              <HBox>
+                <Label text="Kategori: " class="sapTLabel"/>
+                <TextArea id="prodCategory" value="{newMaterial>/category}"/>
+            </HBox>
+            
+            <HBox>
+                <Label text="Fiyat: " class="sapTLabel"/>
+                <Input id="priceInput" value="{newMaterial>/price}"/>
+            </HBox>
+          
+        </VBox>
+        <beginButton>
+            <Button text="Ekle" press="onAddProductPress" />
+        </beginButton>
+        <endButton>
+            <Button text="İptal" press="onCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
+
+ 

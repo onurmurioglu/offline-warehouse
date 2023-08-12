@@ -1,0 +1,14 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<SelectDialog
+		title="Gönderen Depo Seçiniz"
+		items="{senderModel>/}"
+		search=""
+		confirm="confSenderWrhs"
+		cancel="">
+		<StandardListItem
+			title="{senderModel>warehouseName}"
+			description="{senderModel>warehouseNo}" />
+	</SelectDialog>
+</core:FragmentDefinition>

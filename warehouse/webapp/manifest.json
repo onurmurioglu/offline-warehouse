@@ -1,0 +1,123 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "sap.ui.warehouse",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "sap.ui.warehouse.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.93",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "sap.ui.warehouse.i18n.i18n",
+          "supportedLocales": [""],
+          "fallbackLocale": ""
+        }
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "sap.ui.warehouse.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "login",
+          "target": "login"
+        },
+        {
+          "pattern": "overview",
+          "name": "overview",
+          "target": "overview"
+        },
+        {
+          "pattern": "home",
+          "name": "home",
+          "target": "home"
+        },
+        {
+          "name": "productDetail",
+          "pattern": "product/{productID}",
+          "target": "productDetail"
+        },
+        {
+          "pattern": "stockmanage",
+          "name": "stockmanage",
+          "target": "stockmanage"
+        },
+        {
+          "pattern": "transferstock",
+          "name": "transferstock",
+          "target": "transferstock"
+        }
+      ],
+      "targets": {
+        "overview": {
+          "id": "overview",
+          "name": "Overview"
+        },
+        "home": {
+          "id": "home",
+          "name": "Home"
+        },
+        "login": {
+          "id": "login",
+          "name": "Login"
+        },
+        "productDetail": {
+          "id": "productDetail",
+          "name": "ProductDetail"
+        },
+        "stockmanage": {
+          "id": "stockmanage",
+          "name": "Stockmanage"
+        },
+        "transferstock": {
+          "id": "transferstock",
+          "name": "Transferstock"
+        }
+      }
+    },
+
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    }
+  }
+}

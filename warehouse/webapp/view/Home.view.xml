@@ -1,0 +1,30 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.ui.warehouse.controller.Home">
+  <Page title="{i18n>homePageTitle}" class="custom-background">
+    <headerContent>
+      <Button
+        text="Çıkış Yap"
+        icon="sap-icon://log"
+        press="onExitBtn"/>
+    </headerContent>
+
+    <VBox class="tileContainer">
+      <GenericTile header="Depoya Transfer" press="onTile1Press" class="sapMGTH">
+        <TileContent>
+          <ImageContent src="sap-icon://shipping-status" alt="Shipping Icon" description="Shipping Icon" width="3rem" height="3rem" densityAware="false" />
+        </TileContent>
+      </GenericTile>
+
+      <GenericTile header="Stok Yönetimi" press="onTile2Press" class="sapMGTH">
+        <TileContent>
+          <ImageContent src="sap-icon://product" alt="Product Icon" description="Product Icon" width="3rem" height="3rem" densityAware="false" />
+        </TileContent>
+      </GenericTile>
+
+      <GenericTile header="Ürün Detayları" press="onTile3Press" class="sapMGTH">
+        <TileContent>
+          <ImageContent src="sap-icon://approvals" alt="Approvals Icon" description="Approvals Icon" width="3rem" height="3rem" densityAware="false" />
+        </TileContent>
+      </GenericTile>
+    </VBox>
+  </Page>
+</mvc:View>

@@ -1,0 +1,55 @@
+<mvc:View
+   controllerName="sap.ui.warehouse.controller.Login"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   
+   <FlexBox
+      justifyContent="Center"
+      alignItems="Center"
+      class="custom-background"
+      height="100%"
+      width="100%">
+
+   
+      
+      <Panel
+         headerText="LOGIN"
+         class="custom-panel"        
+          >
+         
+         <VBox
+            alignItems="Center"
+            justifyContent="Center"
+            width="100%">
+
+
+            
+            <Input
+            id="usernameInput"
+               value=""
+               valueLiveUpdate="true"
+               width="100%"
+               placeholder="username"
+               />
+            
+            <Input
+               value=""
+               id="passwordInput"
+               valueLiveUpdate="true"
+               width="100%"
+               type="Password"
+               placeholder="password"
+               />
+            
+            <Button
+               id="loginButton"
+               icon="sap-icon://journey-arrive"
+               text="Giriş yap"
+               press="onEntry"/>
+         </VBox>
+         
+      </Panel>
+      
+   </FlexBox>
+   
+</mvc:View>

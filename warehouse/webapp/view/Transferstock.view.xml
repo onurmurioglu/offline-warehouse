@@ -1,0 +1,65 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="sap.ui.warehouse.controller.Transferstock">
+    <Page title="Depoya Transfer" class="custom-background custom-title">
+
+<HBox justifyContent="Center" alignItems="Center" height="2rem">
+   
+  </HBox>
+	 
+	  <headerContent>
+
+      <Button icon="sap-icon://home" text="Anasayfa" press="onHomeButton" class= "custom-title" />
+	  
+	   <Button
+         text="Çıkış Yap"
+            icon="sap-icon://log"
+            press="onExitBtn"
+		/>
+        
+      </headerContent>
+        <FlexBox justifyContent="Center" alignItems="Center" height="1rem" /> 
+			
+		 <VBox alignItems="Center">
+		 
+        	<Label text="Ürün Seçiniz: "  />
+       	<Input  
+				id="mlzFrg"
+				class="sapUiSmallMarginBottom"
+				type="Text"
+				showValueHelp="true"
+				valueHelpIconSrc="sap-icon://arrow-left"
+				valueHelpRequest="onProdSelect"/>
+         
+    <Label text="Gönderen Depo: " />
+         <Input
+				id="senderWarehouse"
+				class="sapUiSmallMarginBottom"
+				type="Text"
+			 
+				showValueHelp="true"
+				valueHelpIconSrc="sap-icon://arrow-left"
+				valueHelpRequest="onSenderSelect"/>
+
+		<Label text="Alıcı Depo: " />
+
+                <Input
+				id="receiveWarehouse"
+				class="sapUiSmallMarginBottom"
+				type="Text"
+				 
+				showValueHelp="true"
+				valueHelpIconSrc="sap-icon://arrow-left"
+				valueHelpRequest="onTransfer"/>
+
+			<Label text="Miktar Giriniz: " />
+				 <Input id="TransferMik"  />
+
+				 <HBox justifyContent="Center" alignItems="Center" height="2rem">
+   
+  </HBox>
+
+                <Button text="Transfer et"  press="onSendTransfer" icon="sap-icon://paper-plane" />
+
+				</VBox>
+          
+    </Page>
+</mvc:View>

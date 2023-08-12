@@ -1,0 +1,78 @@
+html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
+  margin-right: 0.125rem;
+}
+
+html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
+  margin-left: 0.125rem;
+}
+
+.myAppDemoWT .myCustomText {
+  display: inline-block;
+  font-weight: bold;
+}
+.sapMCustomListItem {
+  padding: 10px 0;
+}
+
+.custom-background {
+  background-color: #1c2a6b;
+  align-items: "center";
+}
+
+.custom-panel {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.custom-panel .sapMPanelHdr {
+  color: white;
+  font-weight: 800;
+}
+
+.sapMCustomListItem .sapMLIBTitle {
+  font-weight: bold;
+  color: blue;
+  font-size: 16px;
+}
+
+.tileContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  height: 100%;
+}
+
+.tileContainer .sapMGTH {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.tileContainer .sapMGTH:hover {
+  transform: translateY(-4px);
+}
+
+.sapMLabel {
+  color: white;
+}
+
+.inputBox {
+  margin-bottom: 10px;
+}
+
+.inputBox .sapMLabel {
+  width: 150px;
+  margin-right: 10px;
+}
+
+.sapTLabel {
+  color: black;
+}
+
+.custom-title .sapMTitleInner {
+  text-align: center;
+  margin-left: 40px;
+}

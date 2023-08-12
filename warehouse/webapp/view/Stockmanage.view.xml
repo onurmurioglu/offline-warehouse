@@ -1,0 +1,56 @@
+<mvc:View
+   controllerName="sap.ui.warehouse.controller.Stockmanage"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <Page title="Ürün Stok Yönetimi" class="custom-background">
+
+   <headerContent>
+      <Button icon="sap-icon://home" text="Anasayfa" press="onBack" />
+   </headerContent>
+
+      <content>
+         <VBox alignItems="Center">
+         
+             <HBox alignItems="Center" class="inputBox">
+               <Label text="Ürün URL:"/>
+               <Input value="{/selectedProduct/image}" />
+            </HBox>
+            <HBox alignItems="Center" class="inputBox">
+               <Label text="Ürün Adı:"/>
+               <Input value="{/selectedProduct/title}" />
+            </HBox>
+            <HBox alignItems="Center" class="inputBox">
+               <Label text="Stok Sayısı:"/>
+               <Input value="{/selectedProduct/stock}" />
+            </HBox>
+            <HBox alignItems="Center" class="inputBox">
+               <Label text="Ürün Açıklaması:"/>
+               <Input value="{/selectedProduct/description}" />
+            </HBox>
+             <HBox alignItems="Center" class="inputBox">
+               <Label text="Kategori:"/>
+               <Input value="{/selectedProduct/category}" />
+            </HBox>
+            <HBox alignItems="Center" class="inputBox">
+               <Label text="Fiyat Bilgisi:"/>
+               <Input value="{/selectedProduct/price}" />
+            </HBox>
+            <Button text="Kaydet" press="onSave" icon="sap-icon://save"/>
+            <List id="productList" items="{/products}">
+               <CustomListItem class="myCustomListItem">
+                  <RadioButton selected="{selected}" select=".onItemSelect"/>
+                  <HBox alignItems="Center" spacing="1rem">
+                     <Image src="{image}" width="100px" height="100px"/>
+                     <VBox>
+                        <Text text="{title}" />
+                        <Text text="{category}" />
+                        <Text text="{= 'Stock = ' + ${stock}}" />
+                         <Text text="{price} ₺" />
+                     </VBox>
+                  </HBox> 
+               </CustomListItem>
+            </List>
+         </VBox>
+      </content>
+   </Page>
+</mvc:View>
