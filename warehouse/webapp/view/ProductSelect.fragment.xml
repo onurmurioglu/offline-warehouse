@@ -4,7 +4,7 @@
 	<SelectDialog
 		title="Products"
 		items="{listProducts>/}"
-		search=""
+		search="onSearchProducts"
 		confirm="productConfirm"
 		cancel="">
 		<StandardListItem

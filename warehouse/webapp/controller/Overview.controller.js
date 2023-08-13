@@ -135,7 +135,6 @@ sap.ui.define(
 
         var data = that.getOwnerComponent().getModel("newMaterial").getData();
 
-        console.log("Burası ajax...");
         $.ajax({
           url: "http://localhost:3000/products",
           type: "POST",
@@ -146,7 +145,9 @@ sap.ui.define(
               icon: sap.m.MessageBox.Icon.SUCCESS,
               title: "Başarılı",
               actions: [sap.m.MessageBox.Action.OK],
-              onClose: function () {},
+              onClose: function () {
+                location.reload();
+              },
             });
 
             var sUrl = "http://localhost:3000/products";
@@ -254,6 +255,18 @@ sap.ui.define(
         }
 
         that.onCloseDialog();
+      },
+
+      onSearch: function (oEvent) {
+        var sSearchValue = oEvent.getParameter("query");
+        var oList = this.byId("list");
+        var oBinding = oList.getBinding("items");
+        var oFilter = new Filter(
+          "title",
+          FilterOperator.Contains,
+          sSearchValue
+        );
+        oBinding.filter([oFilter]);
       },
 
       onFilterInvoices: function (oEvent) {

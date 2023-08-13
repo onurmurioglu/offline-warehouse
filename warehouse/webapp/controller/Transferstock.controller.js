@@ -414,6 +414,76 @@ sap.ui.define(
         this._oDialog.close();
       },
 
+      onSearchProducts: function (oEvent) {
+        var sQuery = oEvent.getParameter("value");
+        var oFilter = new sap.ui.model.Filter({
+          filters: [
+            new sap.ui.model.Filter(
+              "title",
+              sap.ui.model.FilterOperator.Contains,
+              sQuery
+            ),
+            new sap.ui.model.Filter(
+              "description",
+              sap.ui.model.FilterOperator.Contains,
+              sQuery
+            ),
+          ],
+          and: false,
+        });
+
+        var oBinding = oEvent.getSource().getBinding("items");
+        oBinding.filter([oFilter]);
+      },
+
+      onSearchReceive: function (oEvent) {
+        console.log("filtre aktif");
+        var sQuery1 = oEvent.getParameter("value");
+        console.log("sQuery1: ", sQuery1);
+        var wFilter = new sap.ui.model.Filter({
+          filters: [
+            new sap.ui.model.Filter(
+              "warehouseName",
+              sap.ui.model.FilterOperator.Contains,
+              sQuery1
+            ),
+            new sap.ui.model.Filter(
+              "warehouseNo",
+              sap.ui.model.FilterOperator.Contains,
+              sQuery1
+            ),
+          ],
+          and: false,
+        });
+
+        var oBinding = oEvent.getSource().getBinding("items");
+        oBinding.filter([wFilter]);
+      },
+
+      onSearchSender: function (oEvent) {
+        console.log("filtre aktif");
+        var sQuery2 = oEvent.getParameter("value");
+        console.log("sQuery2: ", sQuery2);
+        var sFilter = new sap.ui.model.Filter({
+          filters: [
+            new sap.ui.model.Filter(
+              "warehouseName",
+              sap.ui.model.FilterOperator.Contains,
+              sQuery2
+            ),
+            new sap.ui.model.Filter(
+              "warehouseNo",
+              sap.ui.model.FilterOperator.Contains,
+              sQuery2
+            ),
+          ],
+          and: false,
+        });
+
+        var oBinding = oEvent.getSource().getBinding("items");
+        oBinding.filter([sFilter]);
+      },
+
       onHomeButton: function () {
         var oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("home");

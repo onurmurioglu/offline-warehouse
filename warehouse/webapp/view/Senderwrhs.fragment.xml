@@ -4,7 +4,7 @@
 	<SelectDialog
 		title="Gönderen Depo Seçiniz"
 		items="{senderModel>/}"
-		search=""
+		search="onSearchSender"
 		confirm="confSenderWrhs"
 		cancel="">
 		<StandardListItem

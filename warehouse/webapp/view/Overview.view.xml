@@ -3,41 +3,49 @@
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
 
-   <Page title="{i18n>homePageTitle}" class= "custom-background">
+   <Page title="Ürün Detayları" class="custom-background">
       <headerContent>
+         <Toolbar>
+            <content>
+               <Button
+                  icon="sap-icon://home" text="Anasayfa"
+                  press="onStockManage"
+               />
+               <Button
+                  text="Çıkış Yap"
+                  icon="sap-icon://log"
+                  press="onExit"
+               />
+               <ToolbarSpacer />
 
-       <Button
-            icon="sap-icon://home" text="Anasayfa"
-            press="onStockManage"
-            />
-         <Button
-         text="Çıkış Yap"
-            icon="sap-icon://log"
-            press="onExit"/>
+            </content>
+         </Toolbar>
       </headerContent>
       <content>
-      <VBox>
-      <Button text="Yeni Ürün Ekle" press="onSaveBtn"  icon="sap-icon://sys-add"/>
-       <HBox>
-           
-          <ToolbarSpacer/> 
-           
+         <VBox >
+       <VBox>
+            <Button text="Yeni Ürün Ekle" press="onSaveBtn" icon="sap-icon://sys-add"/>
+            <SearchField 
+                  width="100%"
+                  placeholder="Arama..."
+                  search="onSearch"
+                  
+               />
          
-             
-               
-            </HBox>
-         <List
-            id="list"
-            items="{/products}"
-            selectionChange=".onListItemPress">
-            <StandardListItem           
-               title="{title}"
-               description="{description}"
-               icon="{image}"
-         />
-         </List>
-        </VBox>
-        
+       
+          
+            </VBox>
+            <List
+               id="list"
+               items="{/products}"
+               selectionChange=".onListItemPress">
+               <StandardListItem
+                  title="{title}"
+                  description="{description}"
+                  icon="{image}"
+               />
+            </List>
+         </VBox>
       </content>
    </Page>
 </mvc:View>

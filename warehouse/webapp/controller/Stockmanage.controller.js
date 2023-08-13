@@ -68,6 +68,13 @@ sap.ui.define(
             .then((response) => response.json())
             .then((data) => {
               console.log("Veri güncellendi:", data);
+
+              sap.m.MessageBox.show("Veri Güncellendi.", {
+                icon: sap.m.MessageBox.Icon.SUCCESS,
+                title: "Başarılı",
+                actions: [sap.m.MessageBox.Action.OK],
+                onClose: function () {},
+              });
             })
             .catch((error) => {
               console.error("Veri güncelleme hatası:", error);
