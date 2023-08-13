@@ -76,3 +76,7 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
   text-align: center;
   margin-left: 40px;
 }
+
+.dialog-content {
+  margin: 20px;
+}
