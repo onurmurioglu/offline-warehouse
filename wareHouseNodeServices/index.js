@@ -4,9 +4,9 @@ const port = 3001;
 
 // CORS ayarları
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // Tüm kaynaklara erişime izin verme
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE"); // İzin verilen HTTP metodları
-  res.header("Access-Control-Allow-Headers", "Content-Type"); // İzin verilen headerlar
+  res.header("Access-Control-Allow-Origin", "*"); 
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE"); 
+  res.header("Access-Control-Allow-Headers", "Content-Type"); 
   next();
 });
 
@@ -20,9 +20,9 @@ const mysql = require("mysql2");
 
 const connection = mysql.createConnection({
   host: "localhost",
-  user: "root",
-  password: "",
-  database: "warehouse_sync_database",
+  user: "****",
+  password: "****",
+  database: "*****",
 });
 
 connection.connect((err) => {
@@ -61,7 +61,7 @@ app.put("/edit-product/:id", (req, res) => {
   const sql = `UPDATE products SET title = ?, price = ?, description = ?, category = ?, image = ?, stock = ?, selected = ? WHERE id = ?`;
   connection.query(
     sql,
-    [title, price, description, category, image, stock, selected, productId], // productId'i en sona taşıdık
+    [title, price, description, category, image, stock, selected, productId], 
     (err, result) => {
       if (err) {
         console.error("Error editing product:", err);
@@ -76,7 +76,7 @@ app.put("/edit-product/:id", (req, res) => {
 
 //Kayıtları listele
 app.get("/products", (req, res) => {
-  const sql = "SELECT * FROM products"; // Ürünleri çeken SQL sorgusu
+  const sql = "SELECT * FROM products"; 
   connection.query(sql, (err, results) => {
     if (err) {
       console.error("Error fetching products:", err);
